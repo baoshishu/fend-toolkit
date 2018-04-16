@@ -1,0 +1,42 @@
+{
+  "name": "soogang-build-scripts",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ryan Wang <hwwangwang@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "webpack.common.js",
+    "webpack.dev.js",
+    "webpack.prod.js",
+    "webpack.dll.js"
+  ],
+  "dependencies": {
+    "@babel/polyfill": "7.0.0-beta.40",
+    "add-asset-html-webpack-plugin": "^3.0.0-0",
+    "autoprefixer": "^7.2.6",
+    "babel-loader": "8.0.0-beta.2",
+    "cache-loader": "^1.2.2",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.0.7",
+    "image-webpack-loader": "^4.0.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "moment-locales-webpack-plugin": "^1.0.5",
+    "postcss-flexbugs-fixes": "^3.3.0",
+    "postcss-loader": "^2.1.0",
+    "style-loader": "^0.19.0",
+    "svg-url-loader": "^2.3.2",
+    "url-loader": "^0.6.2",
+    "webpack": "^4.5.0",
+    "webpack-bundle-analyzer": "^2.11.1",
+    "webpack-cli": "^2.0.8",
+    "webpack-dev-server": "^3.1.0",
+    "webpack-merge": "^4.1.1"
+  }
+}

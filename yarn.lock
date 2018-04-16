@@ -1685,8 +1685,8 @@ conventional-changelog-angular@^1.6.6:
     q "^1.5.1"
 
 conventional-changelog-core@^2.0.5:
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-core/-/conventional-changelog-core-2.0.10.tgz#3e47565ef9d148bcdceab6de6b3651a16dd28dc8"
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-core/-/conventional-changelog-core-2.0.11.tgz#19b5fbd55a9697773ed6661f4e32030ed7e30287"
   dependencies:
     conventional-changelog-writer "^3.0.9"
     conventional-commits-parser "^2.1.7"
@@ -1741,8 +1741,8 @@ conventional-commits-parser@^2.1.7:
     trim-off-newlines "^1.0.0"
 
 conventional-recommended-bump@^2.0.6:
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/conventional-recommended-bump/-/conventional-recommended-bump-2.0.8.tgz#f7b0589fbc42061cd20ba188ee736ef1fd6e7698"
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/conventional-recommended-bump/-/conventional-recommended-bump-2.0.9.tgz#7392421e7d0e3515f3df2040572a23cc73a68a93"
   dependencies:
     concat-stream "^1.6.0"
     conventional-changelog-preset-loader "^1.1.8"
