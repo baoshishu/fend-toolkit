@@ -1,0 +1,29 @@
+{
+  "name": "babel-preset-soogang",
+  "version": "1.0.10",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ryan Wang <hwwangwang@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.36",
+    "@babel/plugin-proposal-async-generator-functions": "^7.0.0-beta.36",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.36",
+    "@babel/plugin-proposal-decorators": "^7.0.0-beta.36",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.36",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.36",
+    "@babel/plugin-transform-async-to-generator": "^7.0.0-beta.36",
+    "@babel/plugin-transform-react-jsx": "^7.0.0-beta.36",
+    "@babel/plugin-transform-regenerator": "^7.0.0-beta.36",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.36",
+    "@babel/preset-env": "^7.0.0-beta.36",
+    "@babel/preset-flow": "^7.0.0-beta.36",
+    "@babel/preset-react": "^7.0.0-beta.40",
+    "@babel/runtime": "^7.0.0-beta.36",
+    "react-hot-loader": "v4.0.1"
+  }
+}
