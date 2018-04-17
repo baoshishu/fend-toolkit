@@ -9,6 +9,7 @@ if (!pkg.dllDependencies || !pkg.dllDependencies.length) {
 
 module.exports = {
   name: 'vendor',
+  mode: 'production',
   entry: {
     vendor: pkg.dllDependencies,
   },
@@ -19,10 +20,12 @@ module.exports = {
     library: '[name]_[chunkhash]',
   },
   plugins: [
-    new CleanWebpackPlugin(['dll']),
+    new CleanWebpackPlugin(['dll'], {
+      root: process.cwd(),
+    }),
     new webpack.DllPlugin({
       name: '[name]_[chunkhash]',
-      path: path.resolve(__dirname, 'dll/manifest.json'),
+      path: path.resolve(process.cwd(), 'dll/manifest.json'),
     }),
   ],
 }

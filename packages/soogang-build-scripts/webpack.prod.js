@@ -21,6 +21,7 @@ const postCSSLoaderOptions = {
 }
 
 module.exports = merge(common, {
+  mode: 'production',
   module: {
     rules: [
       {
@@ -81,7 +82,9 @@ module.exports = merge(common, {
     },
   },
   plugins: [
-    new CleanWebpackPlugin(['build']),
+    new CleanWebpackPlugin(['build'], {
+      root: process.cwd(),
+    }),
     new webpack.DllReferencePlugin({
       context: process.cwd(),
       manifest: path.resolve(process.cwd(), 'dll/manifest.json'),
