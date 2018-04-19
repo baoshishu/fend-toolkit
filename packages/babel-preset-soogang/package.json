@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-soogang",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
     "@babel/preset-flow": "^7.0.0-beta.44",
     "@babel/preset-react": "^7.0.0-beta.44",
     "@babel/runtime": "^7.0.0-beta.44",
-    "react-hot-loader": "v4.0.1"
+    "react-hot-loader": "v4.1.0"
   }
 }
