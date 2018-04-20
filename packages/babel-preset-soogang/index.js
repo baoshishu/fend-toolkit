@@ -1,5 +1,10 @@
 'use strict'
 
+var env = process.env.BABEL_ENV || process.env.NODE_ENV;
+var isEnvDevelopment = env === 'development';
+var isEnvProduction = env === 'production';
+var isEnvTest = env === 'test';
+
 const plugins = [
   require('@babel/plugin-proposal-decorators').default,
   require('@babel/plugin-transform-async-to-generator').default,
@@ -23,9 +28,9 @@ const plugins = [
       polyfill: false,
     },
   ],
-  require('@babel/plugin-syntax-dynamic-import').default,
-  'react-hot-loader/babel',
-]
+  isEnvTest ? 'babel-plugin-dynamic-import-node-babel-7': require('@babel/plugin-syntax-dynamic-import').default,
+  isEnvTest ? null: 'react-hot-loader/babel',
+].filter(Boolean)
 
 module.exports = function(api, opts) {
   return {
@@ -34,7 +39,7 @@ module.exports = function(api, opts) {
         require('@babel/preset-env').default,
         {
           useBuiltIns: 'entry',
-          modules: false,
+          modules: isEnvTest? 'commonjs':false,
         },
       ],
       require('@babel/preset-react').default,
