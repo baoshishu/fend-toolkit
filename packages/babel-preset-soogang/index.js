@@ -6,7 +6,11 @@ var isEnvProduction = env === 'production';
 var isEnvTest = env === 'test';
 
 const plugins = [
-  require('@babel/plugin-proposal-decorators').default,
+  [require('@babel/plugin-proposal-decorators').default,
+    {
+      legacy: true
+    }
+  ],
   require('@babel/plugin-transform-async-to-generator').default,
   require('@babel/plugin-proposal-class-properties').default,
   [
