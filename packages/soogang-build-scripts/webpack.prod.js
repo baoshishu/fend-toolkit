@@ -7,6 +7,7 @@ const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
+const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin')
 
 const autoprefixer = require('autoprefixer')
 
@@ -92,6 +93,8 @@ module.exports = merge(common, {
     new HtmlWebpackPlugin({
       template: 'public/index.html',
     }),
+    new InlineManifestWebpackPlugin('manifest'),
+
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:8].css',
       chunkFilename: '[name].[contenthash:8].css',
