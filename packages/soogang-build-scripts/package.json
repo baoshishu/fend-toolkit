@@ -1,6 +1,6 @@
 {
   "name": "soogang-build-scripts",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -35,8 +35,9 @@
     "postcss-loader": "^2.1.0",
     "style-loader": "^0.19.0",
     "svg-url-loader": "^2.3.2",
+    "upath": "^1.0.5",
     "url-loader": "^0.6.2",
-    "webpack": "^4.5.0",
+    "webpack": "^4.6.0",
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.14",
     "webpack-dev-server": "^3.1.3",
