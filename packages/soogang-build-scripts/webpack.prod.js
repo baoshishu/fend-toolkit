@@ -28,7 +28,17 @@ module.exports = merge(common, {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['cache-loader', 'babel-loader'],
+        use: [
+          'cache-loader',
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['preset-soogang'],
+              cacheDirectory: true,
+              babelrc: false,
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
