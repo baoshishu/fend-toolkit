@@ -20,7 +20,7 @@ module.exports = merge(common, {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['preset-soogang'],
+            presets: ['soogang'],
           },
         },
       },
