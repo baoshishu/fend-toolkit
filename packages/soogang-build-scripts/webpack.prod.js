@@ -99,7 +99,6 @@ module.exports = merge(common, {
           loader: 'babel-loader',
           options: {
             presets: ['soogang'],
-            babelrc: false,
           },
         },
       ],
