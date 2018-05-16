@@ -1,6 +1,6 @@
 {
   "name": "soogang-build-scripts",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,14 +9,6 @@
   "keywords": [],
   "author": "Ryan Wang <hwwangwang@gmail.com>",
   "license": "MIT",
-  "files": [
-    "webpack.common.js",
-    "webpack.dev.js",
-    "webpack.prod.js",
-    "webpack.dll.js",
-    "webpack.config.js",
-    "addons"
-  ],
   "dependencies": {
     "@babel/polyfill": "7.0.0-beta.40",
     "add-asset-html-webpack-plugin": "^3.0.0-0",
