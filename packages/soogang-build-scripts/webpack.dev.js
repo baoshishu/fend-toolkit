@@ -1,6 +1,7 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 const webpack = require('webpack')
+const paths = require('./paths')
 
 module.exports = merge(common, {
   devtool: 'inline-source-map',
@@ -16,6 +17,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.js$/,
+        include: paths.srcPaths,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',

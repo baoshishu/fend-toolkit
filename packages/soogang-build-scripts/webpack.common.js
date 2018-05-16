@@ -1,11 +1,12 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
+const paths = require('./paths')
 
 module.exports = {
   entry: ['@babel/polyfill', './src/index.js'],
   resolve: {
-    modules: [path.resolve(process.cwd(), 'src'), 'node_modules'],
+    modules: [path.resolve(paths.appPath, 'src'), 'node_modules'],
   },
   plugins: [
     new webpack.ProgressPlugin(),
@@ -22,7 +23,7 @@ module.exports = {
   output: {
     filename: '[name].[hash:8].js',
     chunkFilename: '[name].[chunkhash:8].js',
-    path: path.resolve(process.cwd(), 'build'),
+    path: path.resolve(paths.appPath, 'build'),
     publicPath: process.env.PUBLIC_PATH || '/',
   },
   module: {

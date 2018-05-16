@@ -10,6 +10,7 @@ const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
 const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin')
 const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin')
 const HappyPack = require('happypack')
+const paths = require('./paths')
 
 const autoprefixer = require('autoprefixer')
 
@@ -29,6 +30,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.js$/,
+        include: paths.srcPaths,
         exclude: /node_modules/,
         use: 'happypack/loader',
       },
@@ -86,11 +88,11 @@ module.exports = merge(common, {
   },
   plugins: [
     new CleanWebpackPlugin(['build'], {
-      root: process.cwd(),
+      root: paths.appPath,
     }),
     new webpack.DllReferencePlugin({
-      context: process.cwd(),
-      manifest: path.resolve(process.cwd(), 'dll/manifest.json'),
+      context: paths.appPath,
+      manifest: path.resolve(paths.appPath, 'dll/manifest.json'),
     }),
     new HappyPack({
       loaders: [
@@ -113,7 +115,7 @@ module.exports = merge(common, {
       chunkFilename: '[name].[contenthash:8].css',
     }),
     new HtmlCriticalWebpackPlugin({
-      base: path.resolve(process.cwd(), 'build'),
+      base: path.resolve(paths.appPath, 'build'),
       src: 'index.html',
       dest: 'index.html',
       inline: true,
@@ -127,7 +129,7 @@ module.exports = merge(common, {
     }),
 
     new AddAssetHtmlPlugin({
-      filepath: path.resolve(process.cwd(), './dll/vendor**.js'),
+      filepath: path.resolve(paths.appPath, './dll/vendor**.js'),
       includeSourcemap: true,
     }),
     new MomentLocalesPlugin(),
