@@ -1,7 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const pkg = require(path.join(process.cwd(), 'package.json'))
+const paths = require('./paths')
+const pkg = require(path.join(paths.appPath, 'package.json'))
 
 if (!pkg.dllDependencies || !pkg.dllDependencies.length) {
   throw 'dllDependencies must be set in package.json for dll to work'
@@ -15,17 +16,17 @@ module.exports = {
   },
   devtool: 'source-map',
   output: {
-    path: path.resolve(process.cwd(), 'dll'),
+    path: path.resolve(paths.appPath, 'dll'),
     filename: '[name].[chunkhash:8].js',
     library: '[name]_[chunkhash]',
   },
   plugins: [
     new CleanWebpackPlugin(['dll'], {
-      root: process.cwd(),
+      root: paths.appPath,
     }),
     new webpack.DllPlugin({
       name: '[name]_[chunkhash]',
-      path: path.resolve(process.cwd(), 'dll/manifest.json'),
+      path: path.resolve(paths.appPath, 'dll/manifest.json'),
     }),
   ],
 }
