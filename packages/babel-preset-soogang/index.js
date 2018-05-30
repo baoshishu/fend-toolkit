@@ -34,6 +34,10 @@ const plugins = [
   ],
   isEnvTest ? 'babel-plugin-dynamic-import-node-babel-7': require('@babel/plugin-syntax-dynamic-import').default,
   isEnvTest ? null: 'react-hot-loader/babel',
+  [
+    require("babel-plugin-import").default,
+    { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }
+  ]
 ].filter(Boolean)
 
 module.exports = function(api, opts) {
