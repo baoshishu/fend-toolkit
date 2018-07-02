@@ -8,11 +8,11 @@
 
 ```shell
     yarn install
-    lerna bootstrap
+    yarn lerna bootstrap
 ```
 
 ## publish
 
 ```shell
-    lerna publish
+    yarn bump
 ```

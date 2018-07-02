@@ -5,5 +5,9 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "bump": "lerna publish"
+  }
+
 }

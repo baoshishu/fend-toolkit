@@ -8,7 +8,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
 const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin')
-const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin')
 const HappyPack = require('happypack')
 const paths = require('./paths')
 
@@ -114,20 +113,6 @@ module.exports = merge(common, {
       filename: '[name].[contenthash:8].css',
       chunkFilename: '[name].[contenthash:8].css',
     }),
-    new HtmlCriticalWebpackPlugin({
-      base: path.resolve(paths.appPath, 'build'),
-      src: 'index.html',
-      dest: 'index.html',
-      inline: true,
-      minify: true,
-      extract: true,
-      width: 1300,
-      height: 900,
-      penthouse: {
-        blockJSRequests: false,
-      },
-    }),
-
     new AddAssetHtmlPlugin({
       filepath: path.resolve(paths.appPath, './dll/vendor**.js'),
       includeSourcemap: true,
